@@ -1,0 +1,37 @@
+{
+  "name": "ReactAndNativeDemo",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "webStart": "webpack --config ./web/webpack.config.js",
+    "webServer": "webpack-dev-server --open --config ./web/webpack.config.js --port 8082 --host 172.16.11.80",
+    "webBuild": "NODE_ENV=production webpack --config ./webpack.production.config.js --progress"
+  },
+  "dependencies": {
+    "react": "16.2.0",
+    "react-demo": "^2.0.0",
+    "react-dom": "^16.2.0",
+    "react-native": "0.52.0",
+    "react-native-web": "^0.3.0",
+    "react-router-dom": "^4.2.2"
+  },
+  "devDependencies": {
+    "babel-jest": "22.0.4",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-react-native-web": "^0.3.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "22.0.4",
+    "react-test-renderer": "16.2.0",
+    "react-transform-hmr": "^1.0.4",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.10.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
