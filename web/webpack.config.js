@@ -22,7 +22,7 @@ const babelLoaderConfiguration = {
             // Babel configuration (or use .babelrc)
             // This aliases 'react-native' to 'react-native-web' and includes only
             // the modules needed by the app.
-            plugins: ['react-native-web'],
+            plugins: ['react-native-web',  ["import", { libraryName: "antd-mobile", style: true }]],
             // The 'react-native' preset is recommended to match React Native's packager
             presets: ['react-native']
         }
@@ -50,6 +50,8 @@ module.exports = {
         path: path.resolve(appDirectory, 'dist')
     },
 
+    devtool: 'eval-source-map',
+
     // devserver
     devServer: {
         contentBase: "./dist",//本地服务器所加载的页面所在的目录
@@ -62,6 +64,36 @@ module.exports = {
         rules: [
             babelLoaderConfiguration,
             imageLoaderConfiguration,
+            {
+                test: /.css$/,
+                use: [
+                    {
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: true, // 指定启用css modules
+                            localIdentName: '[name]__[local]--[hash:base64:5]' // 指定css的类名格式
+                        }
+                    },
+                    {loader: require.resolve('sass-loader')}
+                ]
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    {
+                        loader: "style-loader" // creates style nodes from JS strings
+                    },
+                    {
+                        loader: "css-loader" // translates CSS into CommonJS
+                    },
+                    {
+                        loader: "less-loader" // compiles Less to CSS
+                    },
+                ]
+            }
         ]
     },
 
