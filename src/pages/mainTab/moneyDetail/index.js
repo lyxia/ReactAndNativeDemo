@@ -7,9 +7,33 @@ import {
 export default class extends Component {
     render() {
         return (
-            <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                <Text>资金明细</Text>
-            </View>
+            <div style={{display: 'flex',height:'100%',flexDirection:'column'}}>
+                <div style={{flex :1, alignItems: 'center', justifyContent: 'center',boxFlex:1}}>
+                    sdsdsd
+                </div>
+                <div style={{flex :1, alignItems: 'center', justifyContent: 'center',boxFlex:1}}>
+                    sdsdsd
+                </div>
+                <div style={{flex :1, alignItems: 'center', justifyContent: 'center',boxFlex:1}}>
+                    sdsdsd
+                </div>
+                {/*<View style={{flex :1,boxFlex:1, alignItems: 'center', justifyContent: 'center'}}>
+                    <Text>
+                        Test
+                    </Text>
+                </View>
+                <View style={{flex :1,boxFlex:1, alignItems: 'center', justifyContent: 'center'}}>
+                    <Text>
+                        Test
+                    </Text>
+                </View>
+                <View style={{flex :1,boxFlex:1, alignItems: 'center', justifyContent: 'center'}}>
+                    <Text>
+                        Test
+                    </Text>
+                </View>*/}
+            </div>
+
         )
     }
 }

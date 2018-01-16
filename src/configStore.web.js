@@ -1,5 +1,5 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
-import { routerReducer, routerMiddleware, push } from 'react-router-redux'
+import { routerReducer, routerMiddleware } from 'react-router-redux'
 import reducers from './reducers.web' // Or wherever you keep your reducers
 
 import createHistory from 'history/createBrowserHistory'

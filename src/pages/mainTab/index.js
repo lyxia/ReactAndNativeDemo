@@ -1,12 +1,9 @@
 import React, {Component} from 'react'
 import {
     View,
-    TouchableOpacity,
-    Text,
-    StyleSheet,
 } from 'react-native'
 
-import {Route, Redirect} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 
 import {TabBar} from 'antd-mobile'
 
@@ -19,7 +16,6 @@ class MainTab extends Component {
         const {history, match, location} = this.props
 
         return (
-            <View style={{ flex: 1 }}>
                 <TabBar
                     unselectedTintColor="#949494"
                     tintColor="#33A3F4"
@@ -92,21 +88,8 @@ class MainTab extends Component {
                         <Route path={`${match.url}/Mine`} component={Mine}/>
                     </TabBar.Item>
                 </TabBar>
-            </View>
         )
     }
 }
-
-const styles = StyleSheet.create({
-    tabBar: {
-        flexDirection: 'row',
-        justifyContent: 'space-between'
-    },
-    tabbarItem: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    }
-})
 
 export default MainTab

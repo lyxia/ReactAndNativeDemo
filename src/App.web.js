@@ -7,7 +7,7 @@ import {
 
 import { Provider } from 'react-redux'
 
-import { Route, Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 import { ConnectedRouter } from 'react-router-redux'
 
@@ -20,16 +20,14 @@ import {
 
 export default class extends Component {
     render() {
-        return <div>Hello world</div>
-
         return (
             <Provider store={configureStore()}>
                 <ConnectedRouter history={history}>
-                    <View style={{flex: 1}}>
+                    <div style={{position:'absolute',bottom:0,left:0,width:'100%',height:'100%', }}>
                         <Route exact path="/" component={Home}/>
                         <Route path="/MainTab" component={MainTab}/>
                         <Route path="/Login" component={Login}/>
-                    </View>
+                    </div>
                 </ConnectedRouter>
             </Provider>
         )
@@ -39,7 +37,9 @@ export default class extends Component {
 const Home = ({histroy}) => (
        <View>
            <TouchableOpacity onPress={() => history.push(`/MainTab/Home`)}>
-               <Text>MainTab</Text>
+               <Text style={{
+                   color: 'red'
+               }}>MainTab</Text>
            </TouchableOpacity>
            <TouchableOpacity onPress={() => history.push(`/Login`)}>
                <Text>Login</Text>
