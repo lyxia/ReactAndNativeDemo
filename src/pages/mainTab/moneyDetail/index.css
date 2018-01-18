@@ -1,0 +1,15 @@
+.flex {
+    flex:1;
+    -webkit-flex:1;
+}
+.flex-box {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.flex-box-child {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}

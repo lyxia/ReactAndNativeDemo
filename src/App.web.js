@@ -11,7 +11,7 @@ import { Route } from 'react-router-dom'
 
 import { ConnectedRouter } from 'react-router-redux'
 
-import configureStore, { history } from './configStore'
+import configureStore, { history } from './configStore.web'
 
 import {
     MainTab,
@@ -23,7 +23,7 @@ export default class extends Component {
         return (
             <Provider store={configureStore()}>
                 <ConnectedRouter history={history}>
-                    <div style={{position:'absolute',bottom:0,left:0,width:'100%',height:'100%', }}>
+                    <div style={{width:'100%',height:'100%'}}>
                         <Route exact path="/" component={Home}/>
                         <Route path="/MainTab" component={MainTab}/>
                         <Route path="/Login" component={Login}/>
